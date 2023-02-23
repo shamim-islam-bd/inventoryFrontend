@@ -94,7 +94,7 @@ export const resetPassword = async (userData, resetToken) => {
 // Get Login Status
 export const getLoginStatus = async () => {
   try {
-    const response = await axios.get(`${API_URL}loggedin`);
+    const response = await axios.get(`https://inventorybackendmanagmentapi.onrender.com/api/users/loggedin`);
     return response.data;
   } catch (error) {
     const message =
