@@ -7,7 +7,7 @@ import "./index.css";
 import { store } from "./redux/store";
 
 
-axios.defaults.baseURL = `${process.env.BACKEND_URL}`;
+axios.defaults.baseURL = `${process.env.REACT_APP_BACKEND_URL}`;
 // cors policy 
 axios.defaults.headers.common['Access-Control-Allow-Origin'] = '*';  
 

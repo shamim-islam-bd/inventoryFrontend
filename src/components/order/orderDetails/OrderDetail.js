@@ -1,14 +1,14 @@
-import DOMPurify from "dompurify";
+import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import useRedirectLoggedOutUser from "../../../customHook/useRedirectLoggedOutUser";
 import { selectIsLoggedIn } from "../../../redux/features/auth/authSlice";
-import { getProduct } from "../../../redux/features/product/productSlice";
 import Card from "../../card/Card";
-import { SpinnerImg } from "../../loader/Loader";
 import "./OrderDetail.scss";
-import axios from "axios";
+const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
+
+
 
 const OrderDetail = () => {
   useRedirectLoggedOutUser("/login");
@@ -22,7 +22,7 @@ const OrderDetail = () => {
 
   useEffect(() => {
     if (isLoggedIn === true) {
-      axios.get(`/api/orders/`)
+      axios.get(`${BACKEND_URL}/api/orders/`)
       .then(res => {
           // match the id with the product id
           const product = res.data.find(product => product._id === id)

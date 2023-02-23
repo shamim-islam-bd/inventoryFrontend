@@ -10,6 +10,10 @@ import { toast } from "react-toastify";
 import Search from "../../search/Search";
 import "./OrderList.scss";
 
+const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
+
+
+
 const OrderList = () => {
   const [orders, setOrders] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
@@ -18,7 +22,7 @@ const OrderList = () => {
 
   useEffect(() => {
     axios
-      .get("/api/orders/")
+      .get(`${BACKEND_URL}/api/orders/`)
       .then((res) => {
         console.log(res.data);
         setOrders(res.data);
@@ -44,7 +48,7 @@ const OrderList = () => {
     // await dispatch(getOrders());
 
     await axios
-      .delete(`/api/orders/${id}`)
+      .delete(`${BACKEND_URL}/api/orders/${id}`)
       .then((res) => {
         console.log(res.data);
         setOrders(orders.filter((order) => order._id !== id));

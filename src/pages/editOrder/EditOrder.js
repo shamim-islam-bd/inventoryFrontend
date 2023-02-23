@@ -9,6 +9,7 @@ import {
 } from "../../redux/features/product/productSlice";
 import { toast } from "react-toastify";
 
+const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
 
 const EditOrder = () => {
   const { id } = useParams();
@@ -18,7 +19,7 @@ const EditOrder = () => {
  const [product, setProduct] = useState({});
 
  useEffect(() => {
-    axios.get(`/api/orders/`)
+    axios.get(`${BACKEND_URL}/api/orders/`)
         .then(res => {
             // match the id with the product id
             const product = res.data.find(product => product._id === id)
@@ -47,7 +48,7 @@ const EditOrder = () => {
 
     console.log(...formData);
 
-    await axios.patch(`/api/orders/${id}`, product)
+    await axios.patch(`${BACKEND_URL}/api/orders/${id}`, product)
             .then(res => {
                 console.log("edit product", res.data)
                // save into the state
