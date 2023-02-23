@@ -8,7 +8,7 @@ import { store } from "./redux/store";
 // import 'bootstrap/dist/css/bootstrap.min.css';
 
 
-axios.defaults.baseURL = "http://localhost:8000";
+axios.defaults.baseURL = "https://inventorybackendmanagmentapi.onrender.com";
 // cors policy 
 axios.defaults.headers.common['Access-Control-Allow-Origin'] = '*';  
 

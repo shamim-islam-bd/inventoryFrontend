@@ -8,7 +8,7 @@ const API_URL = `${BACKEND_URL}/api/Orders/`;
 // Create New Order
 const createOrder = async (formData) => {
   // console.log("before Creating order frmData: ", formData)
-  const response = await axios.post(`${API_URL}`, formData);
+  const response = await axios.post(`https://inventorybackendmanagmentapi.onrender.com/api/orders/`, formData);
   console.log("orders res: ", response.data)
   return response.data;
 };
@@ -17,26 +17,26 @@ const createOrder = async (formData) => {
 const getOrders = async () => {
   console.log("higging getOrder")
 
-  const response = await axios.get(`${API_URL}`);
+  const response = await axios.get(`https://inventorybackendmanagmentapi.onrender.com/api/orders/`);
   console.log("All Orders", response.data);
   return response.data;
 };
 
 // Delete a Order
 const deleteOrder = async (id) => {
-  const response = await axios.delete(`${API_URL}` + id);
+  const response = await axios.delete(`https://inventorybackendmanagmentapi.onrender.com/api/orders/` + id);
   return response.data;
 };
 
 // Get a Order
 const getOrder = async (id) => {
-  const response = await axios.get(`${API_URL}` + id);
+  const response = await axios.get(`https://inventorybackendmanagmentapi.onrender.com/api/orders/` + id);
   return response.data;
 };
 
 // Update Order
 const updateOrder = async (id, formData) => {
-  const response = await axios.patch(`${API_URL}${id}`, formData);
+  const response = await axios.patch(`https://inventorybackendmanagmentapi.onrender.com/api/orders/${id}`, formData);
   return response.data;
 };
 
