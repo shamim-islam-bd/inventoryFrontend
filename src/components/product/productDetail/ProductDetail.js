@@ -1,4 +1,3 @@
-import DOMPurify from "dompurify";
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
@@ -8,6 +7,7 @@ import { getProduct } from "../../../redux/features/product/productSlice";
 import Card from "../../card/Card";
 import { SpinnerImg } from "../../loader/Loader";
 import "./ProductDetail.scss";
+import DOMPurify from "dompurify";
 
 const ProductDetail = () => {
   useRedirectLoggedOutUser("/login");
@@ -44,7 +44,6 @@ const ProductDetail = () => {
         {isLoading && <SpinnerImg />}
         {product && (
           <div className="detail">
-            <div className="col">
             <Card cardClass="group">
               {product?.image ? (
                 <img
@@ -57,7 +56,7 @@ const ProductDetail = () => {
             </Card>
             <h4>Product Availability: {stockStatus(product.quantity)}</h4>
             <hr />
-            <h4 className="margin-top">
+            <h4>
               <span className="badge">Name: </span> &nbsp; {product.name}
             </h4>
             <p>
@@ -77,11 +76,8 @@ const ProductDetail = () => {
               <b>&rarr; Total Value in stock : </b> {"$"}
               {product.price * product.quantity}
             </p>
-            </div>
-            {/* <hr /> */}
-            <div className="col">
+            <hr />
             <div
-              className="margin-bottom"
               dangerouslySetInnerHTML={{
                 __html: DOMPurify.sanitize(product.description),
               }}
@@ -94,7 +90,6 @@ const ProductDetail = () => {
             <code className="--color-dark">
               Last Updated: {product.updatedAt.toLocaleString("en-US")}
             </code>
-            </div>
           </div>
         )}
       </Card>

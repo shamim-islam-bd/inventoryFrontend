@@ -1,5 +1,6 @@
 .home {
-  background-color: #030b6b;
+  // background-color: #030b6b;
+  background-color: #0a2e63;
   min-height: 100vh;
 
   & nav {
@@ -44,7 +45,10 @@
   }
 }
 .hero-image {
-  width: 50%;
+  width: 80%;
+}
+.hero-image img {
+  width: 100%;
 }
 @media screen and (max-width: 600px) {
   .hero {

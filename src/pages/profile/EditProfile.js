@@ -120,19 +120,19 @@ const EditProfile = () => {
                 onChange={handleInputChange}
               />
             </p>
-            <label>Bio:</label>
             <p>
+              <label>Bio:</label>
               <textarea
                 name="bio"
                 value={profile?.bio}
                 onChange={handleInputChange}
-                cols="21"
-                rows="2"
+                cols="30"
+                rows="10"
               ></textarea>
             </p>
             <p>
               <label>Photo:</label>
-              <input className="file" type="file" name="image" onChange={handleImageChange} />
+              <input type="file" name="image" onChange={handleImageChange} />
             </p>
             <div>
               <button className="--btn --btn-primary">Edit Profile</button>

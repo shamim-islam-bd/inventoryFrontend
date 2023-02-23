@@ -15,6 +15,11 @@ const Dashboard = () => {
   const { products, isLoading, isError, message } = useSelector(
     (state) => state.product
   );
+  // useSelector((state) => console.log(state.orders));
+
+  // const { orders } = useSelector((state) => state.orders);
+  
+  // console.log("orders frm Dashboard parent : ", orders);
 
   useEffect(() => {
     if (isLoggedIn === true) {
@@ -26,14 +31,11 @@ const Dashboard = () => {
     }
   }, [isLoggedIn, isError, message, dispatch]);
 
-
-
-
-
   return (
     <div>
       <ProductSummary products={products} />
       <ProductList products={products} isLoading={isLoading} />
+      {/* <OrderList orders={orders} isLoading={isLoading} /> */}
     </div>
   );
 };

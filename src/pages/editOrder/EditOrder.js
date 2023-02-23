@@ -8,10 +8,6 @@ import {
     selectIsLoading
 } from "../../redux/features/product/productSlice";
 import { toast } from "react-toastify";
-import { BACKEND_URL } from "../../services/authService";
-
-
-const API_URL = `${BACKEND_URL}/api/orders/`;
 
 
 const EditOrder = () => {
@@ -22,7 +18,7 @@ const EditOrder = () => {
  const [product, setProduct] = useState({});
 
  useEffect(() => {
-    axios.get(`${API_URL}`)
+    axios.get(`/api/orders/`)
         .then(res => {
             // match the id with the product id
             const product = res.data.find(product => product._id === id)
@@ -51,7 +47,7 @@ const EditOrder = () => {
 
     console.log(...formData);
 
-    await axios.patch(`${API_URL}${id}`, product)
+    await axios.patch(`/api/orders/${id}`, product)
             .then(res => {
                 console.log("edit product", res.data)
                // save into the state
@@ -69,7 +65,7 @@ const EditOrder = () => {
       { 
         isLoading && <Loader />
       }
-      <h3 className="--mt">Edit Order</h3>
+      <h3 className="--mt">Edit Product</h3>
       <OrderForm
         product={product}
         handleInputChange={handleInputChange}

@@ -9,15 +9,18 @@
   align-items: center;
   vertical-align: middle;
   flex-wrap: wrap;
-  color: #eee;
+  color: #fff;
   transform: translateY(0);
   transition: all 0.3s;
+
   // background-color: green;
+
   &:hover {
     cursor: pointer;
-    transform: translateY(-5px);
     // border: 3px solid #fff;
+    transform: translateY(-5px);
   }
+
   .info-icon {
     padding: 0 2rem;
     color: #fff;
@@ -26,18 +29,12 @@
     color: #fff;
   }
 
-}
-
-
-.react-confirm-alert-overlay {
-  background:  rgba(0, 0, 0, 0.865);
-}
-
-.react-confirm-alert-button-group > button {
-  &:hover {
-    background-color: rgb(242, 13, 13);
-    color: #fff;
-  }
+  // .card {
+  //   border: 1px solid #ccc;
+  //   border-bottom: 3px solid var(--light-blue);
+  //   padding: 5px;
+  //   background-color: #f5f6fa;
+  // }
 }
 
 @media screen and (max-width: 600px) {
@@ -45,4 +42,3 @@
     max-width: 100%;
   }
 }
-

@@ -5,10 +5,9 @@ import { Provider } from "react-redux";
 import App from "./App";
 import "./index.css";
 import { store } from "./redux/store";
-// import 'bootstrap/dist/css/bootstrap.min.css';
 
 
-axios.defaults.baseURL = "https://inventorybackendmanagmentapi.onrender.com";
+axios.defaults.baseURL = `${process.env.BACKEND_URL}`;
 // cors policy 
 axios.defaults.headers.common['Access-Control-Allow-Origin'] = '*';  
 

@@ -1,19 +1,14 @@
-import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { confirmAlert } from "react-confirm-alert";
-import "react-confirm-alert/src/react-confirm-alert.css";
 import { AiOutlineEye } from "react-icons/ai";
 import { FaEdit, FaTrashAlt } from "react-icons/fa";
 import ReactPaginate from "react-paginate";
+import axios from "axios";
+import { confirmAlert } from "react-confirm-alert";
+import "react-confirm-alert/src/react-confirm-alert.css";
 import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
 import Search from "../../search/Search";
 import "./OrderList.scss";
-
-const BACKEND_URL = process.env.BACKEND_URL;
-
-const API_URL = `${BACKEND_URL}/api/orders/`;
-
 
 const OrderList = () => {
   const [orders, setOrders] = useState([]);
@@ -23,7 +18,7 @@ const OrderList = () => {
 
   useEffect(() => {
     axios
-      .get(`${API_URL}`)
+      .get("/api/orders/")
       .then((res) => {
         console.log(res.data);
         setOrders(res.data);
@@ -49,7 +44,7 @@ const OrderList = () => {
     // await dispatch(getOrders());
 
     await axios
-      .delete(`/${API_URL}${id}`)
+      .delete(`/api/orders/${id}`)
       .then((res) => {
         console.log(res.data);
         setOrders(orders.filter((order) => order._id !== id));

@@ -5,8 +5,12 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Layout from "./components/layout/Layout";
+import OrderDetail from "./components/order/orderDetails/OrderDetail";
 import ProductDetail from "./components/product/productDetail/ProductDetail";
 import Sidebar from "./components/sidebar/Sidebar";
+import BillReports from "./pages/Bill Reports/BillReports";
+import Home from "./pages/Home/Home";
+import Invoices from "./pages/Invoices/Invoices";
 import AddOrder from "./pages/addOrder/AddOrder";
 import Orders from "./pages/addOrder/Orders";
 import AddProduct from "./pages/addProduct/AddProduct";
@@ -16,14 +20,12 @@ import Register from "./pages/auth/Register";
 import Reset from "./pages/auth/Reset";
 import Contact from "./pages/contact/Contact";
 import Dashboard from "./pages/dashboard/Dashboard";
+import EditOrder from "./pages/editOrder/EditOrder";
 import EditProduct from "./pages/editProduct/EditProduct";
-import Home from "./pages/Home/Home";
 import EditProfile from "./pages/profile/EditProfile";
 import Profile from "./pages/profile/Profile";
 import { SET_LOGIN } from "./redux/features/auth/authSlice";
 import { getLoginStatus } from "./services/authService";
-import EditOrder from "./pages/editOrder/EditOrder";
-import OrderDetail from "./components/order/orderDetails/OrderDetail";
 
 axios.defaults.withCredentials = true;
 
@@ -64,6 +66,26 @@ function App() {
             <Sidebar>
               <Layout>
                 <AddProduct />
+              </Layout>
+            </Sidebar>
+          }
+        />
+       <Route
+          path="/invoices"
+          element={
+            <Sidebar>
+              <Layout>
+                <Invoices />
+              </Layout>
+            </Sidebar>
+          }
+        />
+       <Route
+          path="/bill-reports"
+          element={
+            <Sidebar>
+              <Layout>
+                <BillReports />
               </Layout>
             </Sidebar>
           }

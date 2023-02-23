@@ -53,7 +53,7 @@ const productForm = ({
 
           <div className="--my">
             <button type="submit" className="--btn --btn-primary">
-              Add product
+              Add Order
             </button>
           </div>
         </form>

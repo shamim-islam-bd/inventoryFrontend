@@ -1,5 +1,5 @@
 import { BiImageAdd } from "react-icons/bi";
-import { FaCommentAlt, FaRegChartBar, FaTh } from "react-icons/fa";
+import { FaCommentAlt, FaFileInvoiceDollar, FaRegChartBar, FaRegMoneyBillAlt, FaTh } from "react-icons/fa";
 import { SiBuymeacoffee } from "react-icons/si";
 
 const menu = [
@@ -26,6 +26,16 @@ const menu = [
         path: "/orders",
       },
     ],
+  },
+  {
+    title: "Invoices",
+    icon: <FaFileInvoiceDollar />,
+    path: "/invoices",
+  },
+  {
+    title: "Bill Reports",
+    icon: <FaRegMoneyBillAlt />,
+    path: "/bill-reports",
   },
   {
     title: "Account",

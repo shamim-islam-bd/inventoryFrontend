@@ -10,12 +10,6 @@ import { SpinnerImg } from "../../loader/Loader";
 import "./OrderDetail.scss";
 import axios from "axios";
 
-const BACKEND_URL = process.env.BACKEND_URL;
-
-const API_URL = `${BACKEND_URL}/api/orders/`;
-
-
-
 const OrderDetail = () => {
   useRedirectLoggedOutUser("/login");
   const dispatch = useDispatch();
@@ -28,7 +22,7 @@ const OrderDetail = () => {
 
   useEffect(() => {
     if (isLoggedIn === true) {
-      axios.get(`${API_URL}`)
+      axios.get(`/api/orders/`)
       .then(res => {
           // match the id with the product id
           const product = res.data.find(product => product._id === id)
@@ -39,7 +33,7 @@ const OrderDetail = () => {
   }, [isLoggedIn]);
 
   return (
-    <div className="order-detail">
+    <div className="product-detail">
       <h3 className="--mt">Order Detail</h3>
       <Card cardClass="card">
         {/* {isLoading && <SpinnerImg />} */}

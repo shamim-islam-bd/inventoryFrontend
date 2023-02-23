@@ -1,16 +1,13 @@
 .product-detail {
   margin-bottom: 5rem;
   width: 100%;
-  // max-width: 500px;
+  max-width: 500px;
   .card {
     width: 100%;
-    // max-width: 500px;
+    max-width: 500px;
     padding: 1rem;
   }
   .detail {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
     & > * {
       margin-bottom: 1rem;
     }
@@ -24,24 +21,10 @@
     p b {
       color: var(--dark-blue);
     }
-    .margin-bottom {
-      margin-bottom: 30px;
-    }
-  }
-  .margin-top {
-    margin-top: 20px;
   }
 }
 
 .group {
   border: 1px solid var(--dark-blue);
   padding: 5px;
-  margin-bottom: 20px;
-
-  img {
-    width: 400px;
-    height: 300px;
-    background-position: center;
-    background-size: cover;
-  }
 }

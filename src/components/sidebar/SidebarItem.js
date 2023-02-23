@@ -18,7 +18,7 @@ const SidebarItem = ({ item, isOpen }) => {
         <div className="sidebar-title">
           <span>
             {item.icon && <div className="icon">{item.icon}</div>}
-            {isOpen && <div className="title">{item.title}</div>}
+            {isOpen && <div>{item.title}</div>}
           </span>
           <MdKeyboardArrowRight
             size={25}
@@ -35,7 +35,7 @@ const SidebarItem = ({ item, isOpen }) => {
                     <div className="sidebar-title">
                       <span>
                         {child.icon && <div className="icon">{child.icon}</div>}
-                        {isOpen && <div className="title">{child.title}</div>}
+                        {isOpen && <div>{child.title}</div>}
                       </span>
                     </div>
                   </div>
@@ -53,7 +53,7 @@ const SidebarItem = ({ item, isOpen }) => {
           <div className="sidebar-title">
             <span>
               {item.icon && <div className="icon">{item.icon}</div>}
-              {isOpen && <div className="title">{item.title}</div>}
+              {isOpen && <div>{item.title}</div>}
             </span>
           </div>
         </div>
