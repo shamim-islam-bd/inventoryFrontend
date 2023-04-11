@@ -4,7 +4,7 @@ export default function Invoices() {
   return (
     <div className="mt-3">
       <h3>Invoices</h3>
-      <p>Future Work.........</p>
+      <p>under development.........</p>
     </div>
   );
 }
